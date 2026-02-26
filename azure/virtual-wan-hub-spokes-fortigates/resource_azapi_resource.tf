@@ -15,8 +15,7 @@ resource "azapi_resource" "resource" {
       name      = "fortigate-managedvwan"
       product   = "fortigate_vwan_nva"
       publisher = "fortinet"
-      version   = "7.4.800250826"         # Do not change unless provided a new version by Fortinet
-      # version   = "7.4.700250513".      # Previous version, updated 08/28/2025
+      version   = "7.4.802251124"         # Do not change unless provided a new version by Fortinet
     },
     properties = {
       managedResourceGroupId = "${data.azurerm_subscription.subscription.id}/resourcegroups/${var.managed_resource_group_name}",
