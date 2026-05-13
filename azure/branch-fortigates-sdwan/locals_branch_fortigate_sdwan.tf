@@ -23,13 +23,36 @@ locals {
 
   license_type = "payg" # can be byol, flex, or payg, make sure the license is correct for the sku
 
+  # FortiGate Offer: fortinet_fortigate-vm
+  # FortiGate plan/sku - version
+  #  Gen 1
+  #  fortigate_fg-vm_byol_70 - 7.0.19
+  #  fortigate_fg-vm_byol_72 - 7.2.13
+  #  fortigate_fg-vm_byol_74 - 7.4.11
+  #  fortigate_fg-vm_byol_76 - 7.6.6
+  #  fortigate_fg-vm_payg_70 - 7.0.19
+  #  fortigate_fg-vm_payg_72 - 7.2.13
+  #  fortigate_fg-vm_payg_74 - 7.4.11
+  #  fortigate_fg-vm_payg_76 - 7.6.6
+  #  Gen 2
+  #  fortigate_fg-vm_byol_74_g2 - 7.4.11
+  #  fortigate_fg-vm_byol_76_g2 - 7.6.6
+  #  fortigate_fg-vm_byol_72_arm64 - 7.2.13
+  #  fortigate_fg-vm_byol_74_arm64 - 7.4.11
+  #  fortigate_fg-vm_byol_76_arm64 - 7.6.6
+  #  fortigate_fg-vm_payg_74_g2 - 7.4.11
+  #  fortigate_fg-vm_payg_76_g2 - 7.6.6
+  #  fortigate_fg-vm_payg_72_arm64 - 7.2.13
+  #  fortigate_fg-vm_payg_74_arm64 - 7.4.11
+  #  fortigate_fg-vm_payg_76_arm64 - 7.6.6
+
   vm_image = {
     "fortigate" = {
       publisher = "fortinet"
-      offer     = "fortinet_fortigate-vm_v5"
-      sku       = local.license_type == "payg" ? "fortinet_fg-vm_payg_2023" : "fortinet_fg-vm" # byol and flex use: fortinet_fg-vm | payg use: fortinet_fg-vm_payg_2022
-      vm_size   = "Standard_D8s_v4"
-      version   = "7.4.7" # an be a version number as well, e.g. 6.4.9, 7.0.6, 7.2.5, 7.4.0
+      offer     = "fortinet_fortigate-vm"
+      sku       = fortigate_fg-vm_payg_76_g2
+      vm_size   = "Standard_D8s_v45"
+      version   = "7.6.6"
     }
   }
 
